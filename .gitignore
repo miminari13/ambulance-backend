@@ -1,6 +1,10 @@
 # compiled output
 /dist
 /node_modules
+/target
+
+# db connection
+/src/main/resources/application.properties
 
 # dotenv environment variables file
 .env
