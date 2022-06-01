@@ -21,13 +21,14 @@ public class DispatcherController {
 
     @PostMapping(path="/add") // Map ONLY POST Requests
     public @ResponseBody String addNewDispatcher (@RequestParam String name
-            , @RequestParam String email) {
+            , @RequestParam String email, @RequestParam String phone) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
         Dispatcher n = new Dispatcher();
         n.setName(name);
         n.setEmail(email);
+        n.setPhone(phone);
         dispatcherRepository.save(n);
         return "Dispatcher saved";
     }
