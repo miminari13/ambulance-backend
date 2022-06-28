@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @Controller // This means that this class is a Controller
 @RequestMapping(path="/dispatchers")
 public class DispatcherController {
@@ -30,7 +31,7 @@ public class DispatcherController {
         n.setEmail(email);
         n.setPhone(phone);
         dispatcherRepository.save(n);
-        return "Dispatcher saved";
+        return "success";
     }
 
     /* /dispatcher/name?v=1 */
